@@ -10,8 +10,11 @@ COPY requirements.txt .
 # Installer les dépendances
 RUN pip install --no-cache-dir -r requirements.txt
 
+# EXPOSE some tcp/udp ports
+EXPOSE 8000
+
 # Copier l'ensemble de l'application dans le conteneur
 COPY . .
 
 # Définir la commande par défaut pour exécuter l'application FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "15400"]

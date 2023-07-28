@@ -4,9 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: "corecpicontainer"
+    container_name: "coreapicontainer"
     ports:
-      - 8000:8000
+      - "8000:15400"
     volumes:
       - ./app/:/app
     env_file:
